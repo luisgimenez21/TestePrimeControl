@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.1 (Python 3.7.9 on win32)" generated="20210506 00:22:23.140" rpa="false" schemaversion="2">
+<suite id="s1" name="TestePrimeControlBDD" source="C:\Users\luis.gimenez\Documents\TestePrimeControl\tests\TestePrimeControlBDD.robot">
+<test id="s1-t1" name="Caso de Teste 01: Pesquisar produto valido">
+<kw name="Acessar pagina principal" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210506 00:22:23.361" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com'.</msg>
+<status status="PASS" starttime="20210506 00:22:23.361" endtime="20210506 00:22:29.062"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210506 00:22:29.068" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210506 00:22:29.062" endtime="20210506 00:22:29.068"/>
+</kw>
+<status status="PASS" starttime="20210506 00:22:23.360" endtime="20210506 00:22:29.068"/>
+</kw>
+<kw name="Pesquisar produto &quot;Printed Chiffon Dress&quot;" library="Resource" sourcename="Pesquisar produto &quot;${PRODUTO_PESQUISA}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_PESQUISAR}</arg>
+<arg>${PRODUTO_PESQUISA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210506 00:22:29.070" level="INFO">Typing text 'Printed Chiffon Dress' into text field 'name=search_query'.</msg>
+<status status="PASS" starttime="20210506 00:22:29.070" endtime="20210506 00:22:29.160"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_PESQUISAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210506 00:22:29.161" level="INFO">Clicking button 'name=submit_search'.</msg>
+<status status="PASS" starttime="20210506 00:22:29.160" endtime="20210506 00:22:29.216"/>
+</kw>
+<status status="PASS" starttime="20210506 00:22:29.069" endtime="20210506 00:22:29.216"/>
+</kw>
+<kw name="Conferir se o resultado da pesquisa corresponde a produto pesquisado" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PESQUISA_Elemento}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210506 00:22:29.217" endtime="20210506 00:22:31.451"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${PESQUISA_Title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210506 00:22:31.454" level="INFO">Page title is 'Search - My Store'.</msg>
+<status status="PASS" starttime="20210506 00:22:31.451" endtime="20210506 00:22:31.454"/>
+</kw>
+<kw name="Page Should Contain Link" library="SeleniumLibrary">
+<arg>${PESQUISA_ProdutoText}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20210506 00:22:31.466" level="INFO">Current page contains link 'xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"Printed Chiffon Dress")]'.</msg>
+<status status="PASS" starttime="20210506 00:22:31.454" endtime="20210506 00:22:31.466"/>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>${PESQUISA_Imagem}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20210506 00:22:31.477" level="INFO">Current page contains image 'xpath=//*[@id="center_column"]//*[@src='http://automationpractice.com/img/p/2/0/20-home_default.jpg']'.</msg>
+<status status="PASS" starttime="20210506 00:22:31.466" endtime="20210506 00:22:31.477"/>
+</kw>
+<status status="PASS" starttime="20210506 00:22:29.217" endtime="20210506 00:22:31.477"/>
+</kw>
+<status status="PASS" starttime="20210506 00:22:23.359" endtime="20210506 00:22:31.477"/>
+</test>
+<test id="s1-t2" name="Caso de Teste 02: Pesquisar produto Invalido">
+<kw name="Acessar pagina principal" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210506 00:22:31.481" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com'.</msg>
+<status status="PASS" starttime="20210506 00:22:31.480" endtime="20210506 00:22:38.088"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210506 00:22:38.096" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210506 00:22:38.088" endtime="20210506 00:22:38.096"/>
+</kw>
+<status status="PASS" starttime="20210506 00:22:31.480" endtime="20210506 00:22:38.096"/>
+</kw>
+<kw name="Pesquisar produto invalido &quot;Invalido&quot;" library="Resource" sourcename="Pesquisar produto invalido &quot;${PRODUTO_INVALIDO}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_PESQUISAR}</arg>
+<arg>${PRODUTO_INVALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210506 00:22:38.098" level="INFO">Typing text 'Invalido' into text field 'name=search_query'.</msg>
+<status status="PASS" starttime="20210506 00:22:38.097" endtime="20210506 00:22:38.190"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_PESQUISAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210506 00:22:38.191" level="INFO">Clicking button 'name=submit_search'.</msg>
+<status status="PASS" starttime="20210506 00:22:38.190" endtime="20210506 00:22:38.255"/>
+</kw>
+<status status="PASS" starttime="20210506 00:22:38.097" endtime="20210506 00:22:38.255"/>
+</kw>
+<kw name="Conferir mensagem de erro &quot;No results were found for your search &quot;Invalido&quot;&quot;" library="Resource" sourcename="Conferir mensagem de erro &quot;${PESQUISA_MSG_ERRO}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PESQUISA_CAMPO_MENSAGEM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210506 00:22:38.256" endtime="20210506 00:22:39.258"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${PESQUISA_CAMPO_MENSAGEM}</arg>
+<arg>${PESQUISA_MSG_ERRO}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210506 00:22:39.259" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p' contains exact text 'No results were found for your search "Invalido"'.</msg>
+<status status="PASS" starttime="20210506 00:22:39.259" endtime="20210506 00:22:39.273"/>
+</kw>
+<status status="PASS" starttime="20210506 00:22:38.255" endtime="20210506 00:22:39.273"/>
+</kw>
+<kw name="Fechar Navegador" library="Resource">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210506 00:22:39.274" endtime="20210506 00:22:41.460"/>
+</kw>
+<status status="PASS" starttime="20210506 00:22:39.274" endtime="20210506 00:22:41.460"/>
+</kw>
+<status status="PASS" starttime="20210506 00:22:31.479" endtime="20210506 00:22:41.462"/>
+</test>
+<status status="PASS" starttime="20210506 00:22:23.140" endtime="20210506 00:22:41.469"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="TestePrimeControlBDD">TestePrimeControlBDD</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
