@@ -28,6 +28,7 @@ Conferir se o resultado da pesquisa corresponde a produto pesquisado
   Title Should Be  ${PESQUISA_Title}
   Page Should Contain Link    ${PESQUISA_ProdutoText}
   Page Should Contain Image  ${PESQUISA_Imagem}
+  Capture Page Screenshot
 
 
 Pesquisar produto invalido "${PRODUTO_INVALIDO}"
@@ -41,4 +42,5 @@ Conferir mensagem de erro "${PESQUISA_MSG_ERRO}"
 
 
 Fechar Navegador
+  Capture Page Screenshot
   Close Browser
