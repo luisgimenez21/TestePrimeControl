@@ -8,7 +8,7 @@ Robot Framework - com a library do Selenium
 pip install --upgrade robotframework-seleniumlibrary
 
 <h3>Comando para executar teste:</h3>
-robot tests\TestePrimeControlBDD.robot ./logs
+robot -d ./logs tests\TestePrimeControl.robot
 
 Foi utilizado a plataforma ATOM para criação e execução dos testes.
 
